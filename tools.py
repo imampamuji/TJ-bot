@@ -4,15 +4,13 @@ import zipfile
 import pandas as pd
 from collections import defaultdict, deque
 from config import llm
-
-###
+import chromadb
+from config import embedding_model
 
 import pandas as pd
-import json
 import os
 from rapidfuzz import process
 from langchain.prompts import PromptTemplate
-from langchain_google_genai import ChatGoogleGenerativeAI
 from langchain_core.output_parsers import JsonOutputParser
 from langchain_core.exceptions import OutputParserException
 
@@ -444,7 +442,6 @@ Tools for RAG
 ###
 
 from langchain.text_splitter import RecursiveCharacterTextSplitter
-from langchain.text_splitter import MarkdownTextSplitter
 
 def split_text(text: str, chunk_size=500, chunk_overlap=50):
     splitter = RecursiveCharacterTextSplitter(
@@ -464,16 +461,10 @@ def split_markdown_file(filepath: str, chunk_size=500, chunk_overlap=50):
     )
     return splitter.split_text(text)
 
-
-import chromadb
-from sentence_transformers import SentenceTransformer
-from config import embedding_model
-
-# init embedding model
 # init Chroma client
 chroma_client = chromadb.Client()
 
-# buat collection (nama bebas)
+# buat collection 
 collection = chroma_client.create_collection(name="busway_docs")
 
 def add_to_chroma(chunks):

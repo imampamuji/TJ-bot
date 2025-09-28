@@ -1,4 +1,4 @@
-# agents/busway_route.py (Versi Perbaikan)
+# agents/busway_route.py
 
 from config import llm
 from models import State
@@ -16,9 +16,9 @@ class BuswayRouteAgent(BaseAgent):
         # Step 1: Panggil tool untuk cari rute
         route_context = run_search_route(user_query)
 
-        # Step 2: Kalau tool kasih hasil → teruskan ke LLM untuk dijelaskan
+        # Step 2: if tool kasih hasil → teruskan ke LLM untuk dijelaskan
         if route_context and route_context.strip():
-            # ---- PROMPT BARU YANG LEBIH BAIK ----
+            # ---- PROMPT  ----
             system_prompt = """
             [PERAN & PERSONA]
             Anda adalah "Jaka", pemandu rute TransJakarta yang sangat ahli. Persona Anda harus selalu:
@@ -73,7 +73,7 @@ class BuswayRouteAgent(BaseAgent):
             reply = llm.invoke(messages)
             reply_text = reply.content
         else:
-            # Step 3: Kalau tool gagal total, berikan jawaban fallback yang lebih ramah
+            # Step 3: if tool gagal total, berikan jawaban fallback yang lebih ramah
             reply_text = "Mohon maaf, Kak, sepertinya sedang ada kendala saat mencari rute. Mohon coba beberapa saat lagi ya."
 
         return {"messages": [{"role": "assistant", "content": reply_text}]}

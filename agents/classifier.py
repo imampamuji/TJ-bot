@@ -3,7 +3,7 @@ from models import State, MessageClassifier
 from .base import BaseAgent
 
 
-# System Prompt Opsi 2 (Sangat Direkomendasikan)
+# System Prompt 
 system_prompt = """
 [TUGAS ANDA]
 Anda adalah sebuah AI classifier yang sangat akurat. Tugas utama Anda adalah mengklasifikasikan pesan pengguna ke dalam SATU dari tiga kategori berikut: `route`, `rag`, atau `smalltalk`.
