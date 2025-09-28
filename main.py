@@ -106,7 +106,7 @@ class ChatbotInterface:
                 queue=False
             )
             
-            # Contoh percakapan (opsional)
+            # Contoh percakapan
             gr.Examples(
                 examples=[
                     ["Saya ingin ke Kalideres dari terminal Kampung Rambutan"],
@@ -132,58 +132,8 @@ def run_chatbot_gradio():
         show_error=True
     )
 
-# Versi sederhana tanpa class (alternatif)
-def simple_gradio_chatbot():
-    """Implementasi yang lebih sederhana tanpa menggunakan class"""
-    
-    graph = build_graph()
-    
-    def chat_function(message, history):
-        # State disimpan dalam history
-        messages = []
-        
-        # Rekonstruksi state dari history
-        for user_msg, assistant_msg in history:
-            messages.extend([
-                {"role": "user", "content": user_msg},
-                {"role": "assistant", "content": assistant_msg}
-            ])
-        
-        # Tambahkan pesan baru
-        messages.append({"role": "user", "content": message})
-        
-        state = {"messages": messages, "message_type": None}
-        
-        try:
-            state = graph.invoke(state)
-            
-            if state.get("messages") and len(state["messages"]) > 0:
-                last_message = state["messages"][-1]
-                assistant_response = last_message.content
-            else:
-                assistant_response = "Maaf, terjadi kesalahan dalam memproses pesan Anda."
-        
-        except Exception as e:
-            assistant_response = f"Error: {str(e)}"
-        
-        history.append([message, assistant_response])
-        return "", history
-    
-    # Interface sederhana
-    with gr.Blocks() as interface:
-        gr.Markdown("# Simple Chatbot")
-        
-        chatbot = gr.Chatbot()
-        msg = gr.Textbox(placeholder="Ketik pesan...")
-        clear = gr.Button("Clear")
-        
-        msg.submit(chat_function, [msg, chatbot], [msg, chatbot])
-        clear.click(lambda: ([], []), outputs=[chatbot, msg])
-    
-    return interface
 
 if __name__ == "__main__":
-    # Pilih salah satu implementasi:
     
     # Opsi 1: Menggunakan class (lebih terstruktur)
     run_chatbot_gradio()

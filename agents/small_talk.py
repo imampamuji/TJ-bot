@@ -7,7 +7,7 @@ class SmalltalkAgent(BaseAgent):
         last_message = state["messages"][-1]
         user_query = last_message.content
 
-        # System Prompt untuk agent_smalltalk
+        # System Prompt untuk agent smalltalk
         system_prompt = """
         [PERAN ANDA]
         Kamu adalah "Jaka", front-liner atau penyapa utama dari layanan asisten virtual TransJakarta.

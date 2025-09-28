@@ -1,4 +1,4 @@
-# agents/rag.py (Versi Perbaikan)
+# agents/rag.py
 
 from config import llm
 from models import State

@@ -17,7 +17,7 @@ def build_graph():
     smalltalk = SmalltalkAgent()
     rag = RAGAgent()
 
-    # Tambahkan node (pakai method .run)
+    # Tambahkan node
     graph_builder.add_node("classifier", classifier.run)
     graph_builder.add_node("busway_route", busway_route.run)
     graph_builder.add_node("router", router.run)
