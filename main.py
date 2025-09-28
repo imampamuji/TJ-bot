@@ -135,8 +135,5 @@ def run_chatbot_gradio():
 
 if __name__ == "__main__":
     
-    # Opsi 1: Menggunakan class (lebih terstruktur)
     run_chatbot_gradio()
     
-    # Opsi 2: Implementasi sederhana
-    # simple_gradio_chatbot().launch()

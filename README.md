@@ -13,17 +13,20 @@ Built with **LangChain, Gemini API, and GTFS data**, with integration options fo
 * 💬 **API & Bot Integration** → Runs via API, WhatsApp, or Telegram.
 
 ---
+## 🛠️ Tech Stack
+
+- Language Model → Google Gemini API (LLM)
+- Orchestration → LangChain + LangGraph
+- Data → GTFS (TransJakarta route data)
+- Backend → FastAPI (REST API)
+- Vector DB → ChromaDB (for RAG pipeline)
+- Messaging → Telegram Bot API, Gradio
+
+---
 
 ## 🏗️ Architecture
 
-```mermaid
-flowchart TD
-    U[User: WhatsApp / Telegram / Web] --> H[API / Bot Handler]
-    H --> O[TJ-Bot Orchestrator]
-    O -->|Classify| C[Intent Classifier (LLM)]
-    O -->|Find| R[Route Finder (GTFS)]
-    O -->|Answer| G[RAG Pipeline]
-```
+![Diagram Architecture](docs/images/diagram.png)
 
 ---
 
@@ -52,7 +55,7 @@ Run bot:
 
 ```bash
 uv run main.py
-uv run uvicorn src.api:app --reload --port 8000
+uv run uvicorn api:app --reload --port 8000
 ```
 
 Test:
