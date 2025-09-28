@@ -52,7 +52,7 @@ class ChatbotInterface:
         """Membuat interface Gradio"""
         
         with gr.Blocks(
-            title="My Chatbot",
+            title="TJ-Bot Virtual Assistant",
             theme=gr.themes.Soft(),
             css="""
             .gradio-container {
@@ -62,7 +62,7 @@ class ChatbotInterface:
             """
         ) as interface:
             
-            gr.Markdown("# 🤖 My Chatbot")
+            gr.Markdown("# 🤖 TJ-Bot")
             gr.Markdown("Selamat datang! Silakan ajukan pertanyaan atau mulai percakapan.")
             
             chatbot = gr.Chatbot(
@@ -111,7 +111,7 @@ class ChatbotInterface:
                 examples=[
                     ["Saya ingin ke Kalideres dari terminal Kampung Rambutan"],
                     ["Bisakah kamu membantu saya?"],
-                    ["Apa yang bisa kamu lakukan?"]
+                    ["Berapa tarif Transjakarta?"]
                 ],
                 inputs=msg_input
             )
