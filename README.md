@@ -1,9 +1,3 @@
----
-title: git_config_-global_credential.helper_store
-app_file: main.py
-sdk: gradio
-sdk_version: 5.47.2
----
 # 🚍 TJ-Bot: TransJakarta Smart Assistant
 
 [![Hugging Face Space](https://img.shields.io/badge/%F0%9F%A4%97%20Try%20on%20Hugging%20Face-blue?logo=huggingface)](https://huggingface.co/spaces/imampamuji/TJ-bot)
