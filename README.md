@@ -1,4 +1,12 @@
+---
+title: git_config_-global_credential.helper_store
+app_file: main.py
+sdk: gradio
+sdk_version: 5.47.2
+---
 # 🚍 TJ-Bot: TransJakarta Smart Assistant
+
+[![Hugging Face Space](https://img.shields.io/badge/%F0%9F%A4%97%20Try%20on%20Hugging%20Face-blue?logo=huggingface)](https://huggingface.co/spaces/imampamuji/TJ-bot)
 
 TJ-Bot is an AI-powered chatbot that helps TransJakarta passengers **find routes, answer questions, and provide service info**.
 Built with **LangChain, Gemini API, and GTFS data**, with integration options for **API, WhatsApp, and Telegram**.
@@ -70,13 +78,15 @@ curl -X POST http://localhost:8000/chat \
 
 ## 💬 Example Interaction
 
-### WhatsApp
+### Chat Gradio Interface 
 
-![WhatsApp Demo](docs/images/whatsapp_demo.png)
+![Chat Demo](docs/images/tj_bot_gradio.png)
 
-### Telegram
+You can try!  [![Hugging Face Space](https://img.shields.io/badge/%F0%9F%A4%97%20Try%20on%20Hugging%20Face-blue?logo=huggingface)](https://huggingface.co/spaces/imampamuji/TJ-bot)
 
-![Telegram Demo](docs/images/telegram_demo.png)
+### API Documentation
+
+![Swagger](docs/images/api_docs.png)
 
 ---
 

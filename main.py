@@ -63,7 +63,7 @@ class ChatbotInterface:
         ) as interface:
             
             gr.Markdown("# 🤖 TJ-Bot")
-            gr.Markdown("Selamat datang! Silakan ajukan pertanyaan atau mulai percakapan.")
+            gr.Markdown("Selamat datang! Saya asisten virtual Anda untuk informasi transportasi busway di Jakarta.")
             
             chatbot = gr.Chatbot(
                 label="Percakapan",
@@ -111,7 +111,7 @@ class ChatbotInterface:
                 examples=[
                     ["Saya ingin ke Kalideres dari terminal Kampung Rambutan"],
                     ["Bisakah kamu membantu saya?"],
-                    ["Berapa tarif Transjakarta?"]
+                    ["tarif nya brp bang?"]
                 ],
                 inputs=msg_input
             )

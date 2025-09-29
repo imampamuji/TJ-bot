@@ -158,7 +158,7 @@ if __name__ == "__main__":
 
     """
 
-    # Struktur user message yang lebih baik untuk memisahkan konteks dan query
+    # Struktur user message untuk memisahkan konteks dan query
     user_content = f"""
     Berdasarkan Konteks di bawah ini:
     ---
@@ -172,7 +172,7 @@ if __name__ == "__main__":
         
     prompt = prompt_template.format(context=context_text, question=q)
     
-    # Initialize OpenAI chat model
+    # Initialize chat model
     model = llm
 
     # Generate response text based on the prompt
